@@ -12,7 +12,7 @@ export class AppComponent {
   constructor() {
     for (let indx = 0; indx < 10; indx++) {
       let yPosAsInt = 95 + indx;
-      console.log(indx);
+      console.log (yPosAsInt);
     }
   }
 
