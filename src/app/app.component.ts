@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'Dokumentenspeicher';
   constructor() {
   }
+
+  logValue (value) {
+    console.log ("value = " + value);
+  }
 }
