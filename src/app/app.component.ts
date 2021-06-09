@@ -6,15 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AnguTest';
-  yPosAsInt: any = 0;
-
+  title = 'Dokumentenspeicher';
   constructor() {
-    for (let indx = 0; indx < 10; indx++) {
-      let yPosAsInt = 95 + indx;
-      console.log (yPosAsInt);
-    }
   }
-
-  yPos = String (this.yPosAsInt);
 }
