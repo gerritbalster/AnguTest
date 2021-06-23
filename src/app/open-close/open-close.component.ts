@@ -2,7 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'open-close',
+  selector: 'app-open-close',
   templateUrl: './open-close.component.html',
   styleUrls: ['./open-close.component.css'],
   animations: [
@@ -17,11 +17,11 @@ import { Component, OnInit } from '@angular/core';
         opacity: 0.8,
         backgroundColor: '#c6ecff'
       })),
-      transition('open => closed', [
-        animate('2s')
+      transition('* => closed', [
+        animate('1s')
       ]),
-      transition('closed => open', [
-        animate('0.5s')
+      transition('* => open', [
+        animate('0.5s', style ({backgroundColor: '*'}))
       ]),
     ]),
   ]

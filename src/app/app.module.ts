@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OpenCloseComponent } from './open-close/open-close.component';
+import { EnterLeaveComponent } from './enter-leave/enter-leave.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    OpenCloseComponent
-  ],
+    OpenCloseComponent,
+    EnterLeaveComponent
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule
