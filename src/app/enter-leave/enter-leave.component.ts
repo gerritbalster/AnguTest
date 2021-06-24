@@ -7,28 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./enter-leave.component.css'],
   animations: [
     trigger('flyInOut', [
-      state('in', style({ transform: 'translateX(0)' })),
-      transition(':enter', [ // Alias für 'void => *'
-        style({ transform: 'translateX(-100%)' }),
-        animate(3000)
-      ])/*,
-      transition('* => void', [
-        animate(100, style({ transform: 'translateX(100%)' }))
-      ])*/
+      state('in', style({ transform: 'translateX(35%)' })),     // Text ab 35% der Fensterbreite positionieren
+      state('out', style({ transform: 'translateX(-100%)' })),  // Text komplett 'herausfahren'
+      transition(':enter', [                                    // Alias für 'void => in'
+        style({ transform: 'translateX(-100%)' }),              // Text ist zu Beginn der Bewegung ausserhalb des Fenster (void)
+        animate(3000)                                           // Den Übergang von void => in animieren
+      ]),
+      transition('in <=> out', animate(3000))                   // state-Wechsel in beiden Richtungen animieren
     ])
   ]
 })
 export class EnterLeaveComponent implements OnInit {
 
-  numbers = [1,2,3,4,5,6,7,9,10];
+  leave : boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  add() {
-    for(let i=1;i<=10;i++)
-      this.numbers.push(Math.random());
+  leaveClicked() {
+    this.leave = true;
   }
 }
