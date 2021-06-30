@@ -40,4 +40,9 @@ export class OpenCloseComponent implements OnInit {
   toggle() {
     this.isOpen = !this.isOpen;
   }
+
+  onAnimationEvent(event : AnimationPlaybackEvent) {
+    console.log ("e = ", event);
+    console.warn ("onAnimationEvent1 ", event.currentTime);
+  }
 }
