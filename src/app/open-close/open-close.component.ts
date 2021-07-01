@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { MyClass } from './my-class';
 
 @Component({
   selector: 'app-open-close',
@@ -30,19 +31,22 @@ import { Component, OnInit } from '@angular/core';
 export class OpenCloseComponent implements OnInit {
   
   isOpen = true;
+  mc : MyClass;
 
   constructor() {
   }
   
   ngOnInit(): void {
+    this.mc = new MyClass();
+    this.mc.setValue ("abc");
   }
 
   toggle() {
     this.isOpen = !this.isOpen;
   }
 
-  onAnimationEvent(event : AnimationPlaybackEvent) {
-    console.log ("e = ", event);
-    console.warn ("onAnimationEvent1 ", event.currentTime);
+  onAnimationEvent(event : AnimationEvent) {
+    console.log ("e = " + event);
+    console.log ("value = " + this.mc.getValue());
   }
 }
