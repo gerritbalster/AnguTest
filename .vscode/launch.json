@@ -15,6 +15,10 @@
                 {
                     "url": "webpack:///src",
                     "path": "c:/Users/xgadblt/vscodews/angulartest/AnguTest/src"
+                },
+                {
+                    "url": "webpack:///src",
+                    "path": "${workspaceFolder}/src"
                 }
             ]
         }

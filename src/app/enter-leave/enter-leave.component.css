@@ -1,0 +1,23 @@
+.marquee {
+    max-width: 100vw; /* iOS braucht das */
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 30pt;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 105%; /* die zusätzlichen 5% erzeugen einen verzögerten Start und vermeiden so ein Ruckeln auf langsamen Seiten */
+    animation: marquee 70s linear infinite;
+}
+
+/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */
+.marquee span:hover {
+    animation-play-state: paused 
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
