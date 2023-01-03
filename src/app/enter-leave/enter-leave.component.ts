@@ -1,4 +1,5 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { templateJitUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -23,7 +24,14 @@ export class EnterLeaveComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const canvas = <HTMLCanvasElement> document.getElementById("my-canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+  }
 
   leaveClicked() {
     this.leave = true;
